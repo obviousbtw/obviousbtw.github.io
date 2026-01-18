@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>BEATS // OBVIOUS!</title>
+    <link rel="stylesheet" href="style.css">
+	<base href="./">
+
+<meta name="description" content="Visuals, Beats, and Sacred Archives by Obvious.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://obviousbtw.github.io/">
+<meta property="og:title" content="OBVIOUS! // VAULT">
+<meta property="og:description" content="Custom Covers & Underground Beats.">
+<meta property="og:image" content="https://obviousbtw.github.io/beatcover.png">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="OBVIOUS! // VAULT">
+<meta property="twitter:image" content="https://obviousbtw.github.io/beatcover.png">
+</head>
+<body>
+    <div class="photo4-bg"></div>
+    <div class="red-layer"></div>
+    <div class="vignette"></div>
+
+    <nav class="nav-bar">
+        <a href="index.html">BACK</a>
+        <h1 class="main-logo">BEATS</h1>
+        <a href="mailto:obviousbtw@gmail.com">CONTACT</a>
+    </nav>
+
+    <div class="wrapper">
+    <h2 class="section-title">SUPPORT THE VAULT</h2>
+    <div class="support-container">
+        
+        <div class="donate-box">
+            <a href="https://www.buymeacoffee.com/obviousbtw" target="_blank" class="donate-btn">
+                DONATE TO THE ARCHIVE
+            </a>
+            <p class="donate-disclaimer">
+                ALL BEATS ARE FREE FOR NON-PROFIT USE.<br>
+                IF YOU ARE NOT PURCHASING A BEAT, FEEL FREE TO HELP OUT.
+            </p>
+        </div>
+
+        <div class="lease-container">
+            <a href="href="https://www.buymeacoffee.com/obviousbtw/extras" target="_blank" class="lease-card">
+				<div class="price-tag">$25</div>
+				<div class="lease-text">
+					<h3>PRO LEASE</h3>
+			<p>UNTAGGED MP3 + PROFIT RIGHTS <br>
+			(FEEL FREE TO ASK FOR A WAV, THOUGH I DOUBT I HAVE IT)</p>
+			</div>
+			<span class="details">BUY NOW ↗</span>
+			</a>
+        </div>
+    </div>
+	
+    <h2 class="section-title">EXCLUSIVE BEATS</h2>
+    <div class="beat-list">
+        
+        <div class="beat-row" onclick="playBeat('beat1.mp3', 'BEAT_01')">
+            <div class="thumb-container">
+                <img src="beatcover.png" alt="Cover" class="beat-thumb">
+                <div class="play-icon">▶</div>
+            </div>
+            <div class="beat-info">
+                <div class="beat-price">$25.00</div>
+                <div class="beat-name">BEAT_01</div>
+            </div>
+            <div class="beat-action">SELECT ↗</div>
+        </div>
+
+        <div class="beat-row" onclick="playBeat('beat2.mp3', 'BEAT_02')">
+            <div class="thumb-container">
+                <img src="beatcover.png" alt="Cover" class="beat-thumb">
+                <div class="play-icon">▶</div>
+            </div>
+            <div class="beat-info">
+                <div class="beat-price">$25.00</div>
+                <div class="beat-name">BEAT_02</div>
+            </div>
+            <div class="beat-action">SELECT ↗</div>
+        </div>
+		
+		<div class="beat-row" onclick="playBeat('beat3.mp3', 'BEAT_03')">
+            <div class="thumb-container">
+                <img src="beatcover.png" alt="Cover" class="beat-thumb">
+                <div class="play-icon">▶</div>
+            </div>
+            <div class="beat-info">
+                <div class="beat-price">$25.00</div>
+                <div class="beat-name">BEAT_03</div>
+            </div>
+            <div class="beat-action">SELECT ↗</div>
+        </div>
+		
+		<div class="beat-row" onclick="playBeat('beat4.mp3', 'BEAT_04')">
+            <div class="thumb-container">
+                <img src="beatcover.png" alt="Cover" class="beat-thumb">
+                <div class="play-icon">▶</div>
+            </div>
+            <div class="beat-info">
+                <div class="beat-price">$25.00</div>
+                <div class="beat-name">BEAT_04</div>
+            </div>
+            <div class="beat-action">SELECT ↗</div>
+        </div>
+		
+		<div class="beat-row" onclick="playBeat('beat5.mp3', 'BEAT_05')">
+            <div class="thumb-container">
+                <img src="beatcover.png" alt="Cover" class="beat-thumb">
+                <div class="play-icon">▶</div>
+            </div>
+            <div class="beat-info">
+                <div class="beat-price">$25.00</div>
+                <div class="beat-name">BEAT_05</div>
+            </div>
+            <div class="beat-action">SELECT ↗</div>
+        </div>
+		
+		<div class="beat-row" onclick="playBeat('beat6.mp3', 'BEAT_06')">
+            <div class="thumb-container">
+                <img src="beatcover.png" alt="Cover" class="beat-thumb">
+                <div class="play-icon">▶</div>
+            </div>
+            <div class="beat-info">
+                <div class="beat-price">$25.00</div>
+                <div class="beat-name">BEAT_06</div>
+            </div>
+            <div class="beat-action">SELECT ↗</div>
+        </div>
+
+    </div>
+</div>
+
+<div id="player-bar" class="player-bar">
+    <div class="player-content">
+        <div class="now-playing">
+            <span class="line-small" style="font-size: 0.5rem; opacity: 0.5;">NOW PLAYING</span>
+            <span id="current-beat-title" class="beat-name">SELECT A TRACK</span>
+        </div>
+        <audio id="main-audio" controls>
+            <source id="audio-source" src="" type="audio/mpeg">
+        </audio>
+    </div>
+</div>
+    
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-logo">Contact</h2>
+            <form action="https://formspree.io/f/xbdddlne" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="NAME" required>
+                <input type="email" name="email" placeholder="EMAIL" required>
+                <select name="topic">
+                    <option value="beats" selected>BEATS</option>
+                    <option value="covers">COVERS</option>
+                    <option value="other">OTHER</option>
+                </select>
+                <textarea name="message" placeholder="MESSAGE" rows="5"></textarea>
+                <button type="submit" class="send-btn">SEND</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        const modal = document.getElementById("contact-modal");
+        const btn = document.querySelector("a[href='mailto:obviousbtw@gmail.com']");
+        const close = document.querySelector(".close-btn");
+
+        btn.onclick = (e) => {
+            e.preventDefault();
+            modal.style.display = "flex";
+        }
+        close.onclick = () => modal.style.display = "none";
+        window.onclick = (e) => {
+            if (e.target == modal) modal.style.display = "none";
+        }
+		
+		function playBeat(file, title) {
+    const playerBar = document.getElementById('player-bar');
+    const audio = document.getElementById('main-audio');
+    const source = document.getElementById('audio-source');
+    const titleDisplay = document.getElementById('current-beat-title');
+
+    // Show the player bar
+    playerBar.style.display = 'block';
+
+    // Update track info
+    source.src = file;
+    titleDisplay.innerText = title;
+
+    // Load and play
+    audio.load();
+    audio.play();
+}
+    </script>
+</body>
+</html>

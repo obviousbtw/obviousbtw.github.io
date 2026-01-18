@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>OBVIOUS! // VAULT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+    <div class="photo-bg"></div>
+    <div class="vignette"></div>
+
+    <nav class="nav-bar">
+        <a href="stream.html">STREAM</a>
+        <a href="covers.html">GET A COVER</a>
+        <h1 class="main-logo">OBVIOUS!</h1>
+        <a href="beats.html">BEATS</a>
+        <a href="#" id="contact-trigger">CONTACT</a>
+    </nav>
+
+    <div class="wrapper">
+        <section class="page1">
+            <h2 class="hero-title">WHAT'S NEW?</h2>
+        </section>
+
+        <section class="page2">
+    <span class="tag">[LATEST DROP]</span>
+    <div class="video-container" id="vault-container" onclick="revealVideo()">
+        <div class="video-overlay">
+            <div class="play-hint">
+                <span class="cross-icon">†</span>
+                <p>ENTER THE VAULT</p>
+            </div>
+        </div>
+        <video id="mv-video" muted playsinline preload="auto">
+            <source src="mv.mp4" type="video/mp4">
+        </video>
+    </div>
+</section>
+
+        <div class="social-icon-grid">
+            <a href="https://youtube.com/@obviousbtw" target="_blank" class="social-icon"><img src="yt.jpg" alt="YT"></a>
+            <a href="https://instagram.com/obviousprod/" target="_blank" class="social-icon"><img src="ig.png" alt="IG"></a>
+            <a href="https://soundcloud.com/obviousbtw" target="_blank" class="social-icon"><img src="sc.png" alt="SC"></a>
+            <a href="https://discord.gg/fhX3d3AGre" target="_blank" class="social-icon"><img src="dc.jpg" alt="DC"></a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>BASSLYNE // 2026</p>
+    </footer>
+
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-logo">Contact</h2>
+            <form action="https://formspree.io/f/xbdddlne" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="NAME" required>
+                <input type="email" name="email" placeholder="EMAIL" required>
+                <textarea name="message" placeholder="MESSAGE" rows="5"></textarea>
+                <button type="submit" class="send-btn">SEND</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('vault-container');
+        const video = document.getElementById('mv-video');
+        const modal = document.getElementById("contact-modal");
+        const contactBtn = document.getElementById("contact-trigger");
+        const closeBtn = document.querySelector(".close-btn");
+
+        // RESET logic for back-button and page loads
+        window.addEventListener('pageshow', () => {
+            container.classList.remove('playing');
+            video.pause();
+            video.currentTime = 0;
+            video.muted = true;
+        });
+
+        function revealVideo() {
+    const container = document.getElementById('vault-container');
+    const video = document.getElementById('mv-video');
+    
+    container.classList.add('playing');
+    video.muted = false;
+    
+    // Shows the play/pause/volume bar after the first click
+    video.controls = true; 
+    video.play();
+}
+
+// Ensure the controls are hidden and video is reset on page load
+window.addEventListener('pageshow', () => {
+    const container = document.getElementById('vault-container');
+    const video = document.getElementById('mv-video');
+    container.classList.remove('playing');
+    video.pause();
+    video.currentTime = 0;
+    video.controls = false; 
+    video.muted = true;
+});
+
+        // Modal Logic
+        contactBtn.onclick = (e) => { e.preventDefault(); modal.style.display = "flex"; }
+        closeBtn.onclick = () => modal.style.display = "none";
+        window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
+		
+	window.addEventListener( "pageshow", function ( event ) {
+      var historyTraversal = event.persisted || 
+                             ( typeof window.performance != "undefined" && 
+                               window.performance.navigation.type === 2 );
+      if ( historyTraversal ) {
+        // Handle page restore/back button
+        window.location.reload();
+      }
+    });
+	
+	
+    </script>
+</body>
+</html>

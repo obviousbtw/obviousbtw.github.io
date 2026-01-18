@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>STREAM // OBVIOUS!</title>
+    <link rel="stylesheet" href="style.css">
+	<base href="./">
+
+<meta name="description" content="Visuals, Beats, and Sacred Archives by Obvious.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://obviousbtw.github.io/">
+<meta property="og:title" content="OBVIOUS! // VAULT">
+<meta property="og:description" content="Custom Covers & Underground Beats.">
+<meta property="og:image" content="https://obviousbtw.github.io/beatcover.png">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="OBVIOUS! // VAULT">
+<meta property="twitter:image" content="https://obviousbtw.github.io/beatcover.png">
+</head>
+<body>
+    <div class="photo2-bg"></div>
+    <div class="red-layer"></div>
+    <div class="vignette"></div>
+
+    <nav class="nav-bar">
+        <a href="index.html">BACK</a>
+        <h1 class="main-logo">STREAM</h1>
+        <a href="mailto:obviousbtw@gmail.com">CONTACT</a>
+    </nav>
+
+    <div class="wrapper">
+        <div class="stream-grid">
+            <a href="https://soundcloud.com/obviousbtw" target="_blank" class="item active">
+                <span class="tag">01</span>
+                <h3>SOUNDCLOUD</h3>
+                <p>LATEST DROPS</p>
+            </a>
+
+            <a href="https://www.youtube.com/@obviousbtw" target="_blank" class="item active">
+                <span class="tag">02</span>
+                <h3>YOUTUBE</h3>
+                <p>MUSIC VIDEOS</p>
+            </a>
+
+            <div class="item locked">
+                <span class="tag">03</span>
+                <h3>SPOTIFY</h3>
+                <p>COMING SOON</p>
+            </div>
+
+            <div class="item locked">
+                <span class="tag">04</span>
+                <h3>APPLE MUSIC</h3>
+                <p>COMING SOON</p>
+            </div>
+        </div>
+    </div>
+
+	<div id="contact-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 class="modal-logo">Contact</h2>
+        
+        <form action="https://formspree.io/f/xbdddlne" method="POST" class="contact-form">
+            <input type="text" placeholder="NAME" required>
+            <input type="email" placeholder="EMAIL" required>
+            
+            <select name="topic">
+                <option value="" disabled selected>SELECT A TOPIC...</option>
+                <option value="booking">BEATS</option>
+                <option value="beats">COVERS</option>
+                <option value="other">OTHER</option>
+            </select>
+            
+            <textarea placeholder="MESSAGE" rows="5"></textarea>
+            
+            <button type="submit" class="send-btn">SEND</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    const modal = document.getElementById("contact-modal");
+    const btn = document.querySelector("a[href='mailto:obviousbtw@gmail.com']"); // Targets your contact link
+    const close = document.querySelector(".close-btn");
+
+    // Replace the default email link behavior with the popup
+    btn.onclick = (e) => {
+        e.preventDefault();
+        modal.style.display = "flex";
+    }
+
+    // Close when clicking X
+    close.onclick = () => modal.style.display = "none";
+
+    // Close when clicking outside the box
+    window.onclick = (e) => {
+        if (e.target == modal) modal.style.display = "none";
+    }
+</script>
+</body>
+</html>
